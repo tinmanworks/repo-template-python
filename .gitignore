@@ -15,3 +15,13 @@ build/
 out/
 bin/
 obj/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.dist/
+*.egg-info/
+.pytest_cache/
