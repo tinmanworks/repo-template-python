@@ -25,3 +25,7 @@ venv/
 .dist/
 *.egg-info/
 .pytest_cache/
+
+# Ruff / MyPy
+.ruff_cache/
+.mypy_cache/
