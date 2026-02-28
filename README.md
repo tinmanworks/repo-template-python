@@ -1,6 +1,6 @@
 # <Project Name>
 
-Python package template with `src/` layout, linting, typing, tests, and CI.
+Python package template with `src/` layout, linting, tests, and core-gated CI plus advisory typing checks.
 
 ## Status
 - Stage: Draft | Active | Stable | Deprecated
@@ -12,22 +12,31 @@ Python package template with `src/` layout, linting, typing, tests, and CI.
 
 ## What This Project Is
 - A baseline for maintainable Python services/tools.
-- Not a full framework or batteries-included product scaffold.
+- A derived template from `repo-template-base` with Python-specific quality gates.
 
 ## Quickstart
 
 ### Prerequisites
 - Python 3.10+
 - `pip`
+- `rg` (ripgrep)
 
-### Install, Lint, Type-check, Test
+### Install
 ```bash
 python -m pip install --upgrade pip
 pip install -e ".[dev]"
+```
+
+### Core Checks (Blocking)
+```bash
 ruff check .
 ruff format --check .
-mypy src
 pytest -q
+```
+
+### Advisory Checks (Non-blocking)
+```bash
+mypy src
 ```
 
 ### Run
@@ -38,7 +47,7 @@ python -m project_name
 ## Repository Layout
 - `src/project_name/` package code
 - `tests/` test suite
-- `docs/` project documentation
+- `docs/` project documentation and doctrine snapshot
 - `examples/` sample usage
 - `tools/` helper scripts
 
@@ -46,6 +55,13 @@ python -m project_name
 - [Overview](docs/overview.md)
 - [Architecture](docs/architecture.md)
 - [ADRs](docs/adr/)
+- [Doctrine Snapshot](docs/doctrine/README.md)
+
+## Validation
+```bash
+bash tools/validate-template.sh core
+bash tools/validate-template.sh advisory
+```
 
 ## Contributing
 See `CONTRIBUTING.md`.

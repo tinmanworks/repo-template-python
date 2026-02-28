@@ -22,6 +22,12 @@
 - Verify local signing is configured before pushing.
 
 ## Code Quality
-- Run `ruff check .` and `ruff format --check .`.
-- Run `mypy src`.
-- Run `pytest -q`.
+- Core-gated checks (blocking):
+  - `ruff check .`
+  - `ruff format --check .`
+  - `pytest -q`
+- Advisory checks (non-blocking):
+  - `mypy src`
+- Template integrity checks:
+  - `bash tools/validate-template.sh core`
+  - `bash tools/validate-template.sh advisory`
