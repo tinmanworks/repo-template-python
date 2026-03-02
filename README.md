@@ -14,6 +14,13 @@ Python package template with `src/` layout, linting, tests, and core-gated CI pl
 - A baseline for maintainable Python services/tools.
 - A derived template from `repo-template-base` with Python-specific quality gates.
 
+## Use This Template
+
+1. Click **Use this template** on GitHub to create a new repository.
+2. Rename package/module identifiers and update ownership metadata.
+3. Review `.env.example` and update environment configuration for your target project.
+4. Run validation and CI checks before first release.
+
 ## Quickstart
 
 ### Prerequisites
